@@ -14,3 +14,9 @@ main {
     height: 100%;
     background-size: 100% 100%;
 }
+
+.cat {
+    position: absolute;
+    padding-left: 35%;
+    padding-top: 37%;
+}
