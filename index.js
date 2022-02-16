@@ -1,10 +1,21 @@
 let cat = document.querySelector('.cat');
 let catInBed = document.querySelector('.catInBed');
+let bed = document.querySelector('.bed');
+let catSleeps = document.querySelector('.catSleeps');
+let toy = document.querySelector('.toy');
+let catOnToy = document.querySelector('.catOnToy');
+let toyCaught = document.querySelector('.toyCaught');
 
-function goToObject() {
-    cat.classList.add('catInBed');
-    cat.classList.remove('cat');
+function goToBed() {
+    cat.classList.toggle('catInBed');      
+    cat.classList.toggle('catSleeps');
 }
 
-let bed = document.querySelector('.bed');
-bed.addEventListener('click', goToObject);
+bed.addEventListener('click', goToBed);
+
+function goToToy() {
+    cat.classList.toggle('catOnToy');      
+    cat.classList.toggle('toyCaught');
+}
+
+toy.addEventListener('click', goToToy);

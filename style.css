@@ -16,23 +16,78 @@ main {
 }
 
 .bed {
-    border: 1px solid red;
     position: absolute;
     height: 110px;
-    width: 170px;
-    margin-top: 550px;
-    margin-left: 30px;
+    width: 190px;
+    bottom: 12%;
+    left: 1%;
+    cursor: pointer;
 }
 
-.catInBed {
+.bed::after {
+    content: 'Time to sleep!';
     position: absolute;
-    padding-top: 520px;
-    padding-left: 30px;
-    transition: 3s;
+    text-align: center;
+    top: -24%;
+    left: 5%;
+    width: 100px;
+    height: 20px;
+    background-color: rgb(165, 110, 65);
+    opacity: 0; 
+    transition: 1s;
+}
+
+.cat:not(.catInBed) + .bed:hover::after {
+    opacity: 1;
 }
 
 .cat {
     position: absolute;
-    padding-left: 35%;
-    padding-top: 37%;
+    left: 35%;
+    bottom: 10%;
+    transition: 3s;
+}
+
+.cat.catInBed {
+    position: absolute;
+    bottom: 13.5%;
+    left: 2%;
+    transition: 3s;
+}
+
+.cat.catInBed.catSleeps::after {
+    content: '..z-Z-z..';
+    color: rgb(45, 37, 126);
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    left: 2%;
+    top: -20%;   
+}
+
+.toy {
+    border: 1px solid red;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    bottom: 5%;
+    left: 16.5%;
+    cursor: pointer;
+}
+
+.cat.catOnToy {
+    position: absolute;
+    bottom: 5%;
+    left: 17%;
+    transition: 2s;
+}
+
+.cat.catOnToy.toyCaught::after {
+    position: absolute;
+    content: 'I caught you!';
+    color: rgb(131, 12, 77);
+    font-size: 24px;
+    background-color: rgb(165, 110, 65);
 }
